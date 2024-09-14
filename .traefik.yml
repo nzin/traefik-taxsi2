@@ -1,0 +1,10 @@
+displayName: Traefik Taxsi2 plugin
+type: middleware
+iconPath: .assets/icon.png
+
+import: github.com/nzin/taxsi2
+
+summary: 'Taxsi2 (WAF) client plugin'
+
+testData:
+  taxsi2Addr: http://localhost:8000

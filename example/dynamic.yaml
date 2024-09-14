@@ -1,0 +1,23 @@
+# dynamic.yaml
+
+http:
+  routers:
+    my-router:
+      rule: "Host(`localhost`)"
+      entryPoints:
+        - web
+      middlewares:
+        - waf
+      service: target
+
+  middlewares:
+    waf:
+      plugin:
+        taxsi2:
+          taxsi2Addr: http://localhost:5000
+
+  services:
+    target:
+      loadBalancer:
+        servers:
+          - url: http://target
