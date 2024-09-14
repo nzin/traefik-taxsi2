@@ -14,7 +14,7 @@ http:
     waf:
       plugin:
         taxsi2:
-          taxsi2Addr: http://localhost:5000
+          taxsi2Addr: http://taxsi2:18000/api/v1/submit
 
   services:
     target:

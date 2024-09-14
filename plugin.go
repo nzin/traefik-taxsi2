@@ -43,6 +43,7 @@ func New(ctx context.Context, next http.Handler, config *Config, name string) (h
 }
 
 func (t *Taxsi2Client) ServeHTTP(rw http.ResponseWriter, req *http.Request) {
+	fmt.Println("Taxsi2.ServeHTTP")
 	if !t.conn.SubmitRequest(req) {
 		http.Error(rw, "Forbidden: Access is denied", http.StatusForbidden)
 		return
